@@ -33,7 +33,7 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-image: url("assets/maxresdefault.jpg");
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -44,10 +44,13 @@
 
 <body class="bg-gray-300 items-center justify-center h-screen flex-col">
     <div id="loading-screen" class="loading-screen flex flex-col items-center">
-        <img src="./assets/lori.gif" alt="Loading..." class="w-48 h-48">
-        <div class="text-2xl font-bold text-gray-700 font-qetod">
-            Loading...
+        <div class="bg-white text-8xl font-bold text-gray-700 font-qetod rounded py-2 px-20">
+            <span class="text-gray-700">$</span>LORI CAT
         </div>
+        <img src="./assets/gojo.jpg" alt="Loading..." class="w-80 h-80">
+        <button id="toggle-music" class="mt-2 bg-white text-black font-qetod py-2 px-4 rounded border-2 border-black hover:bg-gray-200">
+            ENTER THE WORLD
+        </button>
     </div>
     <div class="text-center bg-gray-100 p-8 rounded-lg shadow-lg justify-between">
         <div class="flex justify-between items-center my-8">
@@ -58,9 +61,6 @@
                 <div class="text-3xl text-gray-700 my-4 font-mangat">
                     LORI CAT IN JUJUTSU KAISEN WORLD
                 </div>
-                <button id="toggle-music" class="mt-2 bg-white text-black font-qetod py-2 px-4 rounded border-2 border-black hover:bg-gray-200">
-                    ENTER THE WORLD
-                </button>
             </div>
             <div class="ml-8">
                 <img src="./assets/lori.gif" alt="Lori Cat in Jujutsu Kaisen World" class="rounded-lg"
@@ -125,7 +125,7 @@
             </div>
         </div>
         <div class="bg-white p-4 mt-8 text-2xl font-bold text-center text-black-800 font-qetod">
-            <marquee behavior="scroll" direction="left">$LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI
+            <marquee behavior="scroll" direction="right">$LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI
                 $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI
                 $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI
                 $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI $LORI
@@ -148,10 +148,10 @@
             const musicPlayer = document.getElementById('background-music');
             const toggleButton = document.getElementById('toggle-music');
             var loadingScreen = document.getElementById('loading-screen');
-            loadingScreen.style.display = 'none';
             musicPlayer.play();
             toggleButton.addEventListener('click', function () {
                 if (musicPlayer.paused) {
+                    loadingScreen.style.display = 'none';
                     musicPlayer.play();
                     toggleButton.textContent = 'LEFT THE WORLD';
                 } else {
