@@ -1,6 +1,9 @@
 {
     "private": true,
     "dependencies": {
-      "@vercel/edge": "^0.1.2"
+        "@vercel/edge": "^0.1.2"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.4"
     }
-  }
+}
